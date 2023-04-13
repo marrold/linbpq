@@ -11822,7 +11822,7 @@ VOID ProcessLine(CIRCUIT * conn, struct UserInfo * user, char* Buffer, int len)
 		Sleep(1000);
 			
 		if (conn->BPQStream > 0)
-			ReturntoNode(conn->BPQStream);
+			Disconnect(conn->BPQStream);
 #ifndef LINBPQ
 		else
 			CloseConsole(conn->BPQStream);
