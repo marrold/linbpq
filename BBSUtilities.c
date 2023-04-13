@@ -6140,6 +6140,17 @@ nextline:
 		HoldReason = "Bad word in title or body";
 	}
 
+	// FUCK
+	// 		if (Msg->type == 'B' && FilterWPBulls)
+	//		Msg->status = 'K';
+	//
+	//
+	if (Msg->type == 'B')
+	{
+		Msg->status = 'H';
+		HoldReason = "Bulls Automatically Held";		
+	}
+
 	if (CheckHoldFilters(Msg->from, Msg->to, Msg->via, Msg->bid))
 	{
 		Msg->status = 'H';
@@ -11448,7 +11459,7 @@ VOID ProcessLine(CIRCUIT * conn, struct UserInfo * user, char* Buffer, int len)
 		conn->BBSFlags |= SYNCMODE;
 		conn->FBBHeaders = zalloc(5 * sizeof(struct FBBHeaderLine));
 
-		sprintf(Reply, "POSYNCLOGON %s\r", BBSName);
+		sprintf(Reply, "POSYNCLOGON %s\r", char Reply);
 		BBSputs(conn, Reply);
 		return;
 	}
@@ -11805,6 +11816,7 @@ VOID ProcessLine(CIRCUIT * conn, struct UserInfo * user, char* Buffer, int len)
 
 	if (_memicmp(Cmd, "Node", 4) == 0)
 	{
+		BBSputs(conn, "This BBS doesn't provide node facilites. Disconnecting.\r");
 		ExpandAndSendMessage(conn, SignoffMsg, LOG_BBS);
 		Flush(conn);
 		Sleep(1000);
@@ -12125,7 +12137,6 @@ VOID ProcessLine(CIRCUIT * conn, struct UserInfo * user, char* Buffer, int len)
 			BBSputs(conn, "LISTFILES or FILES - List files available for download\r");
 
 			BBSputs(conn, "N Name - Set Name\r");
-			BBSputs(conn, "NODE - Return to Node\r");
 			BBSputs(conn, "OP n - Set Page Length (Output will pause every n lines)\r");
 			BBSputs(conn, "PASS Password - Set BBS Password\r");
 			BBSputs(conn, "POLLRMS - Manage Polling for messages from RMS \r");
@@ -13058,15 +13069,15 @@ BOOL ProcessYAPPMessage(CIRCUIT * conn)
 					cant use DosDateTimeToFileTime on Linux
 		
 					Bits	Description
-					0-4	Day of the month (1–31)
+					0-4	Day of the month (1ï¿½31)
 					5-8	Month (1 = January, 2 = February, and so on)
 					9-15	Year offset from 1980 (add 1980 to get actual year)
 					wFatTime
 					The MS-DOS time. The time is a packed value with the following format.
 					Bits	Description
 					0-4	Second divided by 2
-					5-10	Minute (0–59)
-					11-15	Hour (0–23 on a 24-hour clock)
+					5-10	Minute (0ï¿½59)
+					11-15	Hour (0ï¿½23 on a 24-hour clock)
 */
 					memset(&TM, 0, sizeof(TM));
 
@@ -13109,15 +13120,15 @@ BOOL ProcessYAPPMessage(CIRCUIT * conn)
 					cant use DosDateTimeToFileTime on Linux
 		
 					Bits	Description
-					0-4	Day of the month (1–31)
+					0-4	Day of the month (1ï¿½31)
 					5-8	Month (1 = January, 2 = February, and so on)
 					9-15	Year offset from 1980 (add 1980 to get actual year)
 					wFatTime
 					The MS-DOS time. The time is a packed value with the following format.
 					Bits	Description
 					0-4	Second divided by 2
-					5-10	Minute (0–59)
-					11-15	Hour (0–23 on a 24-hour clock)
+					5-10	Minute (0ï¿½59)
+					11-15	Hour (0ï¿½23 on a 24-hour clock)
 */
 					memset(&TM, 0, sizeof(TM));
 

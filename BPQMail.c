@@ -1288,6 +1288,7 @@ extern struct ALIAS ** NTSAliases;
 
 extern int EnableUI;
 extern int RefuseBulls;
+extern int HoldBulls;
 extern int SendSYStoSYSOPCall;
 extern int SendBBStoSYSOPCall;
 extern int DontHoldNewUsers;

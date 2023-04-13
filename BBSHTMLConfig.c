@@ -1608,6 +1608,7 @@ VOID ProcessConfUpdate(struct HTTPConnectionInfo * Session, char * MsgPtr, char 
 		GetCheckBox(input, "SysToSYSOP=", &SendSYStoSYSOPCall);
 		GetCheckBox(input, "BBSToSYSOP=", &SendBBStoSYSOPCall);
 		GetCheckBox(input, "RefuseBulls=", &RefuseBulls);
+		GetCheckBox(input, "HoldBulls=", &HoldBulls);
 		GetCheckBox(input, "EnUI=", &EnableUI);
 
 		GetParam(input, "UIInterval=", Temp);
@@ -2467,6 +2468,7 @@ VOID SendConfigPage(char * Reply, int * ReplyLen, char * Key)
 		BBSApplNum, MaxStreams,
 		(SendSYStoSYSOPCall) ? CHKD  : UNC,
 		(RefuseBulls) ? CHKD  : UNC,
+		(HoldBulls) ? CHKD  : UNC,
 		(EnableUI) ? CHKD  : UNC,
 		MailForInterval,
 		(DontHoldNewUsers) ? CHKD  : UNC,

@@ -1500,6 +1500,7 @@ extern HMENU hFWDMenu;									// Forward Menu Handle
 extern char zeros[];						// For forward bitmask tests
 extern BOOL EnableUI;
 extern BOOL RefuseBulls;
+extern BOOL HoldBulls;
 extern BOOL SendSYStoSYSOPCall;
 extern BOOL SendBBStoSYSOPCall;
 extern BOOL DontHoldNewUsers;

@@ -468,6 +468,7 @@ char * MainConfigtxt()
 		"  <input %sname=\"SysToSYSOP\" type=\"checkbox\"> Send System Msgs to\r\n"
 		"SYSOP Call<br>\r\n"
 		"  <input %sname=\"RefuseBulls\" type=\"checkbox\"> Refuse Bulls<br>\r\n"
+		"  <input %sname=\"HoldBulls\" type=\"checkbox\"> Hold Bulls<br>\r\n"
 		"  <input %sname=\"EnUI\" type=\"checkbox\"> Enable FBB UI System<br>\r\n"
 		"&nbsp;&nbsp;&nbsp; Send Mail For Beacons every&nbsp; <input value=\"%d\" size=\"3\" name=\"UIInterval\"> Minutes <input name=\"ConfigUI\" value=\"Config UI Ports and Digis\" type=submit class='btn'><br>\r\n"
 		"  <input %sname=\"DontHold\" type=\"checkbox\"> Don't Hold Messages From New Users<br>\r\n"

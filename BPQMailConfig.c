@@ -693,6 +693,7 @@ VOID WINAPI OnSelChanged(HWND hwndDlg)
 		CheckDlgButton(pHdr->hwndDisplay, IDC_ENABLEUI, EnableUI);
 		SetDlgItemInt(pHdr->hwndDisplay, MAILFOR_MINS, MailForInterval, FALSE);
 		CheckDlgButton(pHdr->hwndDisplay, IDC_REFUSEBULLS, RefuseBulls);
+		CheckDlgButton(pHdr->hwndDisplay, IDC_HOLDBULLS, HoldBulls);
 		CheckDlgButton(pHdr->hwndDisplay, IDC_KNOWNUSERS, OnlyKnown);
 		SetDlgItemInt(pHdr->hwndDisplay, IDC_POP3Port, POP3InPort, FALSE);
 		SetDlgItemInt(pHdr->hwndDisplay, IDC_NNTPPort, NNTPInPort, FALSE);
@@ -1785,6 +1786,7 @@ VOID SaveBBSConfig()
 	GetDlgItemText(hwndDisplay, IDC_BaseDir, BaseDirRaw, MAX_PATH -1);
 	EnableUI = IsDlgButtonChecked(hwndDisplay, IDC_ENABLEUI);
 	RefuseBulls = IsDlgButtonChecked(hwndDisplay, IDC_REFUSEBULLS);
+	HoldBulls = IsDlgButtonChecked(hwndDisplay, IDC_HOLDBULLS);
 	OnlyKnown = IsDlgButtonChecked(hwndDisplay, IDC_KNOWNUSERS);
 	MailForInterval = GetDlgItemInt(hwndDisplay, MAILFOR_MINS, &OK1, FALSE);
 	SendSYStoSYSOPCall = IsDlgButtonChecked(hwndDisplay, IDC_SYSTOSYSOPCALL);
