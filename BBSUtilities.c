@@ -11459,7 +11459,7 @@ VOID ProcessLine(CIRCUIT * conn, struct UserInfo * user, char* Buffer, int len)
 		conn->BBSFlags |= SYNCMODE;
 		conn->FBBHeaders = zalloc(5 * sizeof(struct FBBHeaderLine));
 
-		sprintf(Reply, "POSYNCLOGON %s\r", char Reply);
+		sprintf(Reply, "POSYNCLOGON %s\r", BBSName);
 		BBSputs(conn, Reply);
 		return;
 	}
