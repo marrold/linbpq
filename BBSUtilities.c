@@ -9502,7 +9502,7 @@ VOID SaveConfig(char * ConfigName)
 	SaveIntValue(group, "SendWP", SendWP);
 	SaveIntValue(group, "SendWPType", SendWPType);
 	SaveIntValue(group, "FilterWPBulls", FilterWPBulls);
-	aveIntValue(group, "HoldBulls", HoldBulls);
+	SaveIntValue(group, "HoldBulls", HoldBulls);
 	SaveIntValue(group, "NoWPGuesses", NoWPGuesses);
 
 	SaveStringValue(group, "SendWPTO", SendWPTO);
