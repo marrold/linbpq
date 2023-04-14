@@ -6140,12 +6140,12 @@ nextline:
 		HoldReason = "Bad word in title or body";
 	}
 
-	// FUCK
-	// 		if (Msg->type == 'B' && FilterWPBulls)
-	//		Msg->status = 'K';
-	//
-	//
-	if (Msg->type == 'B')
+
+	if (Msg->type == 'B' && FilterWPBulls)
+		Msg->status = 'K';
+	
+	
+	if (Msg->type == 'B' && HoldBulls)
 	{
 		Msg->status = 'H';
 		HoldReason = "Bulls Automatically Held";		
@@ -9502,6 +9502,7 @@ VOID SaveConfig(char * ConfigName)
 	SaveIntValue(group, "SendWP", SendWP);
 	SaveIntValue(group, "SendWPType", SendWPType);
 	SaveIntValue(group, "FilterWPBulls", FilterWPBulls);
+	aveIntValue(group, "HoldBulls", HoldBulls);
 	SaveIntValue(group, "NoWPGuesses", NoWPGuesses);
 
 	SaveStringValue(group, "SendWPTO", SendWPTO);
@@ -10105,6 +10106,7 @@ BOOL GetConfig(char * ConfigName)
 	SendWPAddrs = GetMultiStringValue(group,  "SendWPAddrs"); 
 
 	FilterWPBulls = GetIntValue(group, "FilterWPBulls");
+	HoldBulls = GetIntValue(group, "HoldBulls");
 	NoWPGuesses = GetIntValue(group, "NoWPGuesses");
 
 	if (SendWPAddrs[0] == NULL && SendWPTO[0])
