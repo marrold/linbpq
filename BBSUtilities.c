@@ -10331,7 +10331,7 @@ int Connected(int Stream)
 				if (OnlyKnown)
 				{
 					// Unknown users not allowed
-					nodeprintf(conn,"This BBS doesn't allow unknown users. Disconnecting.\r");
+
 					n = sprintf_s(Msg, sizeof(Msg), "Incoming Connect from unknown user %s Rejected", callsign);
 					WriteLogLine(conn, '|',Msg, n, LOG_BBS);
 
